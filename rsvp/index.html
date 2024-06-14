@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracy & Dan — RSVP</title>
+</head>
+
+<body>
+  <div>
+    <div>
+      <h1>RSVP</h1>
+
+      <form id="form">
+        <div id="form-name">
+          <label for="name"></label>
+          <input placeholder="Your name?" type="text" name="name" id="name" required>
+        </div>
+        <div id="form-attenting">
+          <label for="attending">Attending?</label>
+          <select id="attending" name="attending" required>
+            <option value="" disabled selected>—</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div id="form-party">
+          <label for="party"></label>
+          <input placeholder="Other guests in your party?" type="text" name="party" id="party">
+        </div>
+        <div id="form-notes">
+          <label for="notes"></label>
+          <input placeholder="Feel free to write any notes here (including dietary restrictions or other relevant information)." type="text" name="notes" id="notes">
+        </div>
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw2xlvankd1qvo-I9ysixuD8x-68OWZld7lfkm-JhvIGWzrttrG-QoKaJWJi6joTaLc/exec'
+  const form = document.querySelector('#form')
+  const btn = document.querySelector('#submit')
+
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    btn.disabled = true
+    btn.innerHTML = "Loading..."
+
+    console.log(form)
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        btn.disabled = false
+        btn.innerHTML = "Submit"
+        window.location.href = 'https://google.com'
+        // alert('Thank you, from Tracy and Dan!', response)
+        
+      })
+      .catch(error => {
+        btn.disabled = false
+        btn.innerHTML = "Submit"
+        alert('Error!', error.message)
+      })
+  })
+</script>
+
+</html>
