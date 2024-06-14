@@ -5,7 +5,8 @@
     --form-width-1b: var(--form-width-deskop);
 }
 
-label {
+label,
+h2 {
     display: block;
     font-size: 18px;
     font-family: "classico-urw", sans-serif;
