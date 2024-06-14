@@ -1,0 +1,13 @@
+label {
+    display: block;
+    font-family: serif;
+    font-size: 18px;
+}
+
+textarea, select {
+    height: 40px;
+    width: 400px;
+    background: grey;
+    border: none;
+    resize: none;
+}

@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tracy & Dan — RSVP</title>
+  <title>Tracy and Dan — RSVP</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -15,24 +16,24 @@
 
       <form id="form">
         <div id="form-name">
-          <label for="name"></label>
-          <input placeholder="Your name?" type="text" name="name" id="name" required>
+          <label for="name">Your name.</label>
+          <textarea type="text" name="name" id="name" required></textarea>
         </div>
         <div id="form-attenting">
-          <label for="attending">Attending?</label>
+          <label for="attending">Will you be able to attend?</label>
           <select id="attending" name="attending" required>
-            <option value="" disabled selected>—</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option value="" disabled selected>Select One</option>
+            <option value="Yes">Attending</option>
+            <option value="No">Not Attending</option>
           </select>
         </div>
         <div id="form-party">
-          <label for="party"></label>
-          <input placeholder="Other guests in your party?" type="text" name="party" id="party">
+          <label for="party">Please write the names of other guests in your wedding party separated by commas.</label>
+          <textarea type="text" name="party" id="party"></textarea>
         </div>
         <div id="form-notes">
-          <label for="notes"></label>
-          <input placeholder="Feel free to write any notes here (including dietary restrictions or other relevant information)." type="text" name="notes" id="notes">
+          <label for="notes">Feel free to write any notes here (including dietary restrictions or other relevant information).</label>
+          <textarea type="text" name="notes" id="notes"></textarea>
         </div>
         <button type="submit" id="submit">Submit</button>
       </form>
@@ -57,7 +58,7 @@
       .then(response => {
         btn.disabled = false
         btn.innerHTML = "Submit"
-        window.location.href = 'https://google.com'
+        window.location.href = '../index.html'
         // alert('Thank you, from Tracy and Dan!', response)
         
       })
