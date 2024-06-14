@@ -17,6 +17,7 @@ label {
 }
 
 textarea,
+input,
 select {
     height: 40px;
     width: var(--form-width-deskop);
@@ -29,7 +30,8 @@ select {
     padding: 10px;
 }
 
-#form {
+#form,
+#login-form {
     width: var(--form-width-deskop);
     display: block;
     margin: auto;
@@ -52,10 +54,11 @@ select {
     margin-top: 1rem;
 }
 
-#submit-button {
+#submit-button,
+#password-button {
     width: 120px;
     height: 40px;
-    background: red;
+    background: #D30000;
     color: white;
     border: none;
     display: block;

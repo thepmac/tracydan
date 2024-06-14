@@ -14,13 +14,12 @@
   <div>
     <div>
       <h1>RSVP</h1>
-
-      <div id="login-form">
-        <h1>Enter Password</h1>
-        <input type="password" id="password" placeholder="Password">
-        <button type="button" onclick="checkPassword()">Submit</button>
+        <div id="login-form" class="form-question">
+          <label for="name">Enter Password</label>
+          <input type="password" id="password" class="form-input-a">
+        </div>
+        <button type="submit" id="password-button" onclick="checkPassword()">Submit</button>
         <p id="error-message" style="color: red;"></p>
-      </div>
 
       <div id="rsvp-form" style="display: none;">
 
@@ -62,8 +61,10 @@
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('error-message');
 
-    if (password === 'huangyuan2024') {
+    if (password === 'jdt0928') {
       document.getElementById('login-form').style.display = 'none';
+      document.getElementById('password-button').style.display = 'none';
+      document.getElementById('error-message').style.display = 'none';
       document.getElementById('rsvp-form').style.display = 'block';
     } else {
       errorMessage.textContent = 'Incorrect password. Please try again.';
