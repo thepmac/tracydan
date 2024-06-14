@@ -1,13 +1,79 @@
-label {
-    display: block;
-    font-family: serif;
-    font-size: 18px;
+:root {
+    --form-padding: 10px;
+    --form-width-deskop: 600px;
+    --form-width-1a: calc(var(--form-width-deskop) - (2 * var(--form-padding)));
+    --form-width-1b: var(--form-width-deskop);
 }
 
-textarea, select {
+label {
+    display: block;
+    font-size: 18px;
+    font-family: "classico-urw", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+textarea,
+select {
     height: 40px;
-    width: 400px;
-    background: grey;
+    width: var(--form-width-deskop);
+    background: #F2F2F2;
     border: none;
     resize: none;
+    font-family: Arial;
+    border-top: 2px black solid;
+    text-align: center;
+    padding: 10px;
+}
+
+#form {
+    width: var(--form-width-deskop);
+    display: block;
+    margin: auto;
+}
+
+.form-question,
+.form-input-a {
+    width: var(--form-width-1a);
+}
+
+.form-input-b {
+    width: var(--form-width-1b);
+}
+
+.form-question {
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    margin-top: 1rem;
+}
+
+#submit-button {
+    width: 120px;
+    height: 40px;
+    background: red;
+    color: white;
+    border: none;
+    display: block;
+    margin: auto;
+}
+
+.button:hover span {
+    display: none
+}
+
+.button:hover:before {
+    content: "Completed!";
+}
+
+#submit-button:hover span {
+    display: none;
+}
+
+#submit-button:hover:before {
+    content: "囍";
 }
