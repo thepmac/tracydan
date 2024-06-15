@@ -126,6 +126,13 @@
         height: 40px;
         width: var(--form-width-deskop);
     }
+    
+    select {
+        height: 61.5px;
+        width: var(--form-width-mobile);
+        font-size: 16px;
+        display: block;
+    }
 
     #form,
     #login-form {
@@ -209,7 +216,7 @@ option {
 }
 
 select {
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
 a:link,
