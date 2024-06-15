@@ -126,11 +126,11 @@
         height: 40px;
         width: var(--form-width-deskop);
     }
-    
+
     select {
         height: 61.5px;
         width: var(--form-width-mobile);
-        font-size: 16px;
+        /* font-size: 16px; */
         display: block;
     }
 
@@ -198,7 +198,7 @@ h3 {
 textarea,
 input,
 select,
-option {
+select > option {
     background: #F2F2F2;
     border: none;
     resize: none;
@@ -213,6 +213,10 @@ option {
     -moz-appearance: none;
     appearance: none;
     border-radius: 0;
+}
+
+select > option {
+    color: red;
 }
 
 select {
