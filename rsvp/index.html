@@ -17,11 +17,15 @@
       <div id="rsvp-form">
         <form id="form">
           <div id="form-name" class="form-question">
-            <label for="name">Your name</label>
+            <label for="name">Name</label>
             <textarea type="text" name="name" id="name" class="form-input-a" required></textarea>
           </div>
+          <div id="form-contact" class="form-question">
+            <label for="contact">E-mail</label>
+            <textarea type="text" name="contact" id="contact" class="form-input-a" required></textarea>
+          </div>
           <div id="form-attenting" class="form-question">
-            <label for="attending">Will you be able to attend?</label>
+            <label for="attending">Attending?</label>
             <select id="attending" name="attending" class="form-input-b" required>
               <option value="" disabled selected>Select One</option>
               <option value="Yes">Attending</option>
@@ -33,7 +37,7 @@
             <textarea type="text" name="party" id="party" class="form-input-a"></textarea>
           </div>
           <div id="form-notes" class="form-question">
-            <label for="notes">Additional notes</label>
+            <label for="notes">Notes</label>
             <textarea type="text" name="notes" id="notes" class="form-input-a"></textarea>
           </div>
           <button type="submit" id="submit-button"><span>Submit</span></button>
