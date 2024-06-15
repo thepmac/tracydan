@@ -190,7 +190,8 @@ h3 {
 
 textarea,
 input,
-select {
+select,
+option {
     background: #F2F2F2;
     border: none;
     resize: none;
@@ -202,6 +203,8 @@ select {
     text-align: center;
     padding: 10px;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-radius: 0;
 }
 
