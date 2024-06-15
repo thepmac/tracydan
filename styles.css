@@ -186,6 +186,12 @@ select {
     padding-left: 20px;
 }
 
+a:link {
+    text-decoration: underline;
+    text-decoration-thickness: 1.8px; 
+    color: #D30000;
+}
+
 #form,
 #login-form {
     display: block;
@@ -226,4 +232,8 @@ select {
 
 #submit-button:hover:before {
     content: "囍";
+}
+
+button {
+    cursor: pointer;
 }
