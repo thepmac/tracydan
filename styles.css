@@ -20,7 +20,7 @@
     label,
     h2 {
         font-size: 16px;
-        margin: 0px 0px 0px 0px;
+        margin: 0px 0px 8px 0px;
 
     }
 
@@ -79,7 +79,7 @@
     label,
     h2 {
         font-size: 20px;
-        margin: 0px 0px 20px 0px;
+        margin: 0px 0px 8px 0px;
     }
 
     h1 {
@@ -186,11 +186,20 @@ select {
     padding-left: 20px;
 }
 
-a:link {
+a:link,
+a:visited {
     text-decoration: underline;
     text-decoration-thickness: 1.8px; 
     color: #D30000;
 }
+
+a:hover,
+a:active {
+    text-decoration: underline;
+    text-decoration-thickness: 1.8px; 
+    color: black;
+}
+
 
 #form,
 #login-form {
@@ -210,7 +219,7 @@ a:link {
 #submit-button,
 #password-button {
     width: 120px;
-    height: 40px;
+    height: 20px;
     background: #D30000;
     color: white;
     border: none;
