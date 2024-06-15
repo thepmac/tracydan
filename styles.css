@@ -1,83 +1,191 @@
 :root {
-    --form-padding: 10px;
+    --form-padding-desktop: 10px;
+    --form-padding-mobile: 6px;
     --form-width-deskop: 600px;
-    --form-width-1a: calc(var(--form-width-deskop) - (2 * var(--form-padding)));
-    --form-width-1b: var(--form-width-deskop);
+    --form-width-deskop-1a: calc(var(--form-width-deskop) - (2 * var(--form-padding-desktop)));
+    --form-width-deskop-1b: var(--form-width-deskop);
+    --form-width-mobile: 80vw;
+    /* --form-width-mobile-1a: calc(var(--form-width-mobile) - (2 * var(--form-padding-mobile))); */
+    /* --form-width-mobile-1b: var(--form-width-mobile); */
+    --form-width-mobile-1a: calc(var(--form-width-mobile) - 20px);
+    --form-width-mobile-1b: var(--form-width-mobile);
+}
+
+
+@media only screen and (max-width: 799px) {
+    main {
+        margin: 108px 0px 0px 0px;
+    }
+
+    label,
+    h2 {
+        font-size: 16px;
+        margin: 0px 0px 0px 0px;
+
+    }
+
+    h1 {
+        font-size: 48px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    h1,
+    h2 {
+        padding: 0px;
+        line-height: 1.4;
+    }
+
+
+    .text-group-a {
+        margin: 0px 10px 84px 10px;
+    }
+
+    .text-group-b {
+        margin: 0px 0px 24px 0px;
+    }
+
+    label {
+        width: var(--form-width-mobile);
+    }
+
+    textarea,
+    input,
+    select {
+        height: 40px;
+        width: var(--form-width-mobile);
+    }
+
+    #form,
+    #login-form {
+        width: var(--form-width-mobile);
+    }
+
+    .form-question,
+    .form-input-a {
+        width: var(--form-width-mobile-1a);
+    }
+
+    .form-input-b {
+        width: var(--form-width-mobile-1b);
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+    main {
+        margin: 160px 0px 0px 0px;
+    }
+
+    label,
+    h2 {
+        font-size: 20px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    h1 {
+        font-size: 96px;
+        margin: -6px 0px 20px 0px;
+    }
+
+    h1,
+    h2 {
+        padding: 0px;
+        line-height: .7;
+    }
+
+    .text-group-a {
+        margin: 0px 0px 160px 0px;
+    }
+
+    .text-group-b {
+        margin: 0px 0px 80px 0px;
+    }
+
+    label {
+        width: var(--form-width-deskop);
+    }
+
+    textarea,
+    input,
+    select {
+        height: 40px;
+        width: var(--form-width-deskop);
+    }
+
+    #form,
+    #login-form {
+        width: var(--form-width-deskop);
+    }
+
+    .form-question,
+    .form-input-a {
+        width: var(--form-width-deskop-1a);
+    }
+
+    .form-input-b {
+        width: var(--form-width-deskop-1b);
+    }
+
+}
+
+html {
+    margin: 0px;
+}
+
+body {
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px;
 }
 
 label,
 h2 {
     display: block;
-    font-size: 20px;
     font-family: "classico-urw", sans-serif;
     font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 4px;
     text-align: center;
-    margin: 0px 0px 20px 0px;
-}
-
-main {
-    margin: 160px 0px 0px 0px;
 }
 
 h1 {
     display: block;
-    font-size: 96px;
     font-family: "classico-urw", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
     text-align: center;
-    margin: -6px 0px 20px 0px;
-}
-
-h1,
-h2 {
-    padding: 0px;
-    line-height: .7;
-}
-
-.text-group-a {
-    margin: 0px 0px 160px 0px;
-}
-
-.text-group-b {
-    margin: 0px 0px 80px 0px;
 }
 
 textarea,
 input,
 select {
-    height: 40px;
-    width: var(--form-width-deskop);
     background: #F2F2F2;
     border: none;
     resize: none;
-    font-family: Arial;
-    border-top: 2px black solid;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .5px;
+    border-top: 1.8px black solid;
     text-align: center;
     padding: 10px;
 }
 
+select {
+    padding-left: 20px;
+}
+
 #form,
 #login-form {
-    width: var(--form-width-deskop);
     display: block;
     margin: auto;
 }
 
 .form-question,
-.form-input-a {
-    width: var(--form-width-1a);
-}
-
-.form-input-b {
-    width: var(--form-width-1b);
-}
-
-.form-question {
+#login-form {
     margin-bottom: 2rem;
 }
 
