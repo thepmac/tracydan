@@ -215,7 +215,7 @@ select > option {
     border-radius: 0;
 }
 
-select > option {
+.attendance-option {
     color: red;
 }
 
