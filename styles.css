@@ -173,7 +173,7 @@ h2 {
 
 h2.invite {
     text-transform: lowercase;
-    color:#D30000;
+    color: #D30000;
 }
 
 h1,
@@ -199,6 +199,8 @@ select {
     border-top: 1.8px black solid;
     text-align: center;
     padding: 10px;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 select {
@@ -208,14 +210,14 @@ select {
 a:link,
 a:visited {
     text-decoration: underline;
-    text-decoration-thickness: 1.8px; 
+    text-decoration-thickness: 1.8px;
     color: #D30000;
 }
 
 a:hover,
 a:active {
     text-decoration: underline;
-    text-decoration-thickness: 1.8px; 
+    text-decoration-thickness: 1.8px;
     color: black;
 }
 
