@@ -12,30 +12,137 @@
 
 <body>
   <main>
-    <div class="text-group-a">
-      <div class="text-group-b">
-        <h2>The Holy Matrimony of</h2>
+    <!-- Password Form -->
+    <div id="login-form" class="form-question">
+      <label for="password">Enter Password</label>
+      <input type="password" id="password" class="form-input-a">
+    </div>
+    <button type="submit" id="password-button" onclick="checkPassword()">Submit</button>
+    <p id="error-message" style="color: red;"></p>
+
+    <!-- RSVP Form (Initially Hidden) -->
+    <div id="rsvp-form" style="display: none;">
+      <div class="text-group-a">
+        <div class="text-group-b">
+          <h2>The Holy Matrimony of</h2>
+        </div>
+        <div class="text-group-b">
+          <h1>Tracy Huang</h1>
+        </div>
+        <div class="text-group-b">
+          <h2>and</h2>
+        </div>
+        <div class="text-group-b">
+          <h1>Daniel Yuan</h1>
+        </div>
       </div>
-      <div class="text-group-b">
-        <h1>Tracy Huang</h1>
+
+      <div class="text-group-a">
+        <h2>Saturday, September 28th, 2024</h2>
+        <h2>Chinese Bible Church of Greater Lowell</h2>
+        <h2>10:30 a.m.</h2>
       </div>
-      <div class="text-group-b">
-        <h2>and</h2>
-      </div>
-      <div class="text-group-b">
-        <h1>Daniel Yuan</h1>
+      <div class="text-group-a">
+        <h2><a href="rsvp/index.html">RSVP</a></h2>
       </div>
     </div>
     </div>
-    <div class="text-group-a">
-      <h2>Saturday, September 28th, 2024</h2>
-      <h2>Chinese Bible Church of Greater Lowell</h2>
-      <h2>10:30 a.m.</h2>
-    </div>
-    <div class="text-group-a">
-    <h2><a href="rsvp/index.html">RSVP</a></h2>
-  </div>
   </main>
+
+  <script>
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+      const cname = name + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(cname) == 0) {
+          return c.substring(cname.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+
+      if (password === 'jdt0928') {
+        setCookie('validated', 'true', 365);
+        showRSVPForm();
+      } else {
+        errorMessage.textContent = 'Please try again.';
+      }
+    }
+
+    function showRSVPForm() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('rsvp-form').style.display = 'block';
+      document.getElementById('password-button').style.display = 'none';
+      document.getElementById('error-message').style.display = 'none';
+    }
+
+    window.onload = function () {
+      if (getCookie('validated') === 'true') {
+        showRSVPForm();
+      }
+    }
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw2xlvankd1qvo-I9ysixuD8x-68OWZld7lfkm-JhvIGWzrttrG-QoKaJWJi6joTaLc/exec'
+    const form = document.querySelector('#form')
+    const btn = document.querySelector('#submit-button')
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      btn.disabled = true
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          btn.disabled = false
+          btn.innerHTML = ""
+          window.location.href = 'index.html'
+        })
+        .catch(error => {
+          btn.disabled = false
+          btn.innerHTML = "Submit"
+          alert('Error!', error.message)
+        })
+    })
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const textareas = ['name', 'attending', 'party', 'notes'];
+
+      textareas.forEach(id => {
+        const textarea = document.getElementById(id);
+        textarea.addEventListener('input', () => {
+          if (textarea.value.trim()) {
+            textarea.style.backgroundColor = 'white';
+          } else {
+            textarea.style.backgroundColor = '#F2F2F2';
+          }
+        });
+      });
+    });
+
+    var input = document.getElementById("submit-button");
+
+    input.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("myBtn").click();
+      }
+    });
+  </script>
 
 </body>
 

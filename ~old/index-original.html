@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracy and Dan</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/gcn6cob.css">
+</head>
+
+<body>
+  <main>
+    <div id="login-form" class="form-question">
+      <label for="name">Enter Password</label>
+      <input type="password" id="password" class="form-input-a">
+    </div>
+    <button type="submit" id="password-button" onclick="checkPassword()">Submit</button>
+    <p id="error-message" style="color: red;"></p>
+
+
+  </main>
+
+</body>
+
+<script>
+
+  function checkPassword() {
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
+
+    if (password === 'jdt0928') {
+      window.location.href = 'pw/index.html';
+    } else {
+      errorMessage.textContent = 'Please try again.';
+    }
+  }
+
+
+</script>
+
+</html>

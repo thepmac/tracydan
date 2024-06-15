@@ -163,11 +163,6 @@ h2 {
     text-align: center;
 }
 
-h2.invite {
-    text-transform: lowercase;
-    color:#D30000;
-}
-
 h1,
 h3 {
     display: block;
