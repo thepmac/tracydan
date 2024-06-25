@@ -14,52 +14,55 @@
 
 <body>
   <main>
-  <div>
     <div>
-      <div id="rsvp-form">
-        <form id="form">
-          <div id="form-name" class="form-question">
-            <label for="name">Name</label>
-            <textarea type="text" name="name" id="name" class="form-input-a" required></textarea>
-          </div>
-          <div id="form-contact" class="form-question">
-            <label for="contact">E-mail</label>
-            <textarea type="text" name="contact" id="contact" class="form-input-a" required></textarea>
-          </div>
-          <div id="form-attenting" class="form-question">
-            <label for="attending">Attending?</label>
-            <select id="attending" name="attending" class="form-input-b" required>
-              <option class="attendance-option" value="" disabled selected>Please Select</option>
-              <option class="attendance-option" value="Yes">Attending</option>
-              <option class="attendance-option" value="No">Not Attending</option>
-            </select>
-          </div>
-          <div id="form-party" class="form-question">
-            <label for="party">Other guests in your wedding party</label>
-            <textarea type="text" name="party" id="party" class="form-input-a"></textarea>
-          </div>
-          <div id="form-spicy" class="form-question">
-            <label for="spicy">Do you like spicy food?</label>
-            <select id="spicy" name="spicy" class="form-input-b" required>
-              <option class="spicy-option" value="" disabled selected>Please Select</option>
-              <option class="spicy-option" value="Spicy">Yes</option>
-              <option class="spicy-option" value="No Spicy">No</option>
-            </select>
-          </div>
-          <div id="form-dietary" class="form-question">
-            <label for="dietary">Dietary restrictions</label>
-            <textarea type="text" name="dietary" id="dietary" class="form-input-a"></textarea>
-          </div>
-          <div id="form-notes" class="form-question">
-            <label for="notes">Notes</label>
-            <textarea type="text" name="notes" id="notes" class="form-input-a"></textarea>
-          </div>
-          <button type="submit" id="submit-button"><span>Submit</span></button>
-        </form>
+      <div>
+        <div class="text-group-b">
+          <h2>Full lunch reception to follow immediately after the ceremony.</h2>
+        </div>
+        <div id="rsvp-form">
+          <form id="form">
+            <div id="form-name" class="form-question">
+              <label for="name">Name</label>
+              <textarea type="text" name="name" id="name" class="form-input-a" required></textarea>
+            </div>
+            <div id="form-contact" class="form-question">
+              <label for="contact">E-mail</label>
+              <textarea type="text" name="contact" id="contact" class="form-input-a" required></textarea>
+            </div>
+            <div id="form-attenting" class="form-question">
+              <label for="attending">Attending?</label>
+              <select id="attending" name="attending" class="form-input-b" required>
+                <option class="attendance-option" value="" disabled selected>Please Select</option>
+                <option class="attendance-option" value="Yes">Attending</option>
+                <option class="attendance-option" value="No">Not Attending</option>
+              </select>
+            </div>
+            <div id="form-party" class="form-question">
+              <label for="party">Other guests in your wedding party</label>
+              <textarea type="text" name="party" id="party" class="form-input-a"></textarea>
+            </div>
+            <div id="form-spicy" class="form-question">
+              <label for="spicy">Do you like spicy food?</label>
+              <select id="spicy" name="spicy" class="form-input-b" required>
+                <option class="spicy-option" value="" disabled selected>Please Select</option>
+                <option class="spicy-option" value="Spicy">Yes</option>
+                <option class="spicy-option" value="No Spicy">No</option>
+              </select>
+            </div>
+            <div id="form-dietary" class="form-question">
+              <label for="dietary">Dietary restrictions</label>
+              <textarea type="text" name="dietary" id="dietary" class="form-input-a"></textarea>
+            </div>
+            <div id="form-notes" class="form-question">
+              <label for="notes">Notes</label>
+              <textarea type="text" name="notes" id="notes" class="form-input-a"></textarea>
+            </div>
+            <button type="submit" id="submit-button"><span>Submit</span></button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
 
 </body>
 
@@ -102,14 +105,14 @@
     });
   });
 
-var input = document.getElementById("submit-button");
+  var input = document.getElementById("submit-button");
 
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("myBtn").click();
-  }
-});
+  input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("myBtn").click();
+    }
+  });
 </script>
 
 </html>
