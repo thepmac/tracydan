@@ -13,8 +13,21 @@
 
 
 @media only screen and (max-width: 799px) {
+
     main {
-        margin: 108px 0px 108px 0px;
+        margin: 108px 5vw 108px 5vw;
+    }
+
+    .residue {
+        position: fixed;
+        top: 108px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        opacity: 0.05;
+        z-index: -10;
+        margin: 0;
     }
 
     label,
@@ -79,11 +92,30 @@
         width: var(--form-width-mobile-1b);
     }
 
+    .qr {
+        width: 160px;
+        height: auto;
+    }
+
 }
 
 @media only screen and (min-width: 800px) {
+
     main {
-        margin: 160px 0px 160px 0px;
+        margin: 160px auto 160px auto;
+        width: 800px;
+    }
+
+    .residue {
+        position: fixed;
+        top: 160px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        opacity: 0.05;
+        z-index: -10;
+        margin: 0;
     }
 
     label,
@@ -105,7 +137,7 @@
     h2,
     h3 {
         padding: 0px;
-        line-height: .7;
+        line-height: 1.4;
     }
 
     .text-group-a {
@@ -148,6 +180,11 @@
         width: var(--form-width-deskop-1b);
     }
 
+    .qr {
+        width: 160px;
+        height: auto;
+    }
+
 }
 
 html {
@@ -159,6 +196,10 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0px;
+}
+
+main {
+    box-sizing: border-box;
 }
 
 p {
@@ -198,7 +239,7 @@ h3 {
 textarea,
 input,
 select,
-select > option {
+select>option {
     background: #F2F2F2;
     border: none;
     resize: none;
@@ -225,8 +266,7 @@ select {
 
 a:link,
 a:visited {
-    text-decoration: underline;
-    text-decoration-thickness: 1.8px;
+    text-decoration: none;
     color: #D30000;
 }
 
@@ -236,7 +276,6 @@ a:active {
     text-decoration-thickness: 1.8px;
     color: black;
 }
-
 
 #form,
 #login-form {
@@ -282,4 +321,9 @@ a:active {
 
 button {
     cursor: pointer;
+}
+
+.qr {
+    display: block;
+    margin: auto;
 }
